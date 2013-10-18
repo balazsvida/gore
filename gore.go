@@ -6,12 +6,13 @@ import (
 	"github.com/sriram-srinivasan/gore/eval"
 	"io"
 	"os"
+	"strings"
 )
 
 func main() {
 	var src string
 	if len(os.Args) > 1 {
-		src = os.Args[1]
+		src = strings.Join(os.Args[1:], " ")
 	} else {
 		fmt.Println("Enter one or more lines and hit ctrl-D")
 		src = readStdin()
